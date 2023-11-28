@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>占い</title>
+  </head>
+  <body>
+    <p>今日のラッキーカラーを占います</p>
+    <button id="button">ボタンを押して占う</button>
+    <p>今日のラッキーカラーは<span id="content">〇〇</span>です</p>
+  </body>
+  <script>
+    const button = document.getElementById("button");
+    const content = document.getElementById("content");
+    button.addEventListener("click", random);
+
+    function random() {
+      const style = ["赤", "青", "緑"];
+      const color = ["red", "blue", "green"];
+      const randomIndex = Math.floor(Math.random() * style.length);
+      content.innerHTML = style[randomIndex];
+      content.style.color = color[randomIndex];
+    }
+  </script>
+</html>
